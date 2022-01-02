@@ -1,0 +1,614 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'assets/vendors/font-awesome/css/font-awesome.min.css' %}"  type="text/css" rel="stylesheet" />
+    <link href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}"  type="text/css" rel="stylesheet" />
+    <!-- PLUGINS STYLES-->
+    <link href="{% static 'assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css' %}"  type="text/css" rel="stylesheet" />
+    <!-- THEME STYLES-->
+    <!-- <link href="assets/css/main.min.css" rel="stylesheet" /> -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet"  type="text/css" />
+    <!-- PAGE LEVEL STYLES-->
+    <script  src="{% static 'files/bootstrap/jquery/jquery-3.3.1.min.js' %}"> </script> 
+    <link rel="stylesheet" href="{% static 'files/bootstrap/css/bootstrap.css' %}"  type="text/css" > 
+    <link rel="stylesheet" href="{% static 'files/style5.css' %}"  type="text/css" >
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .titles {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            border-bottom: 1px solid #DDD;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+        }
+
+        .titles > .title {
+            margin-right: 1.4em;
+            font-size: 1em;
+            color: #666;
+        }
+
+        .titles > [data-status*="active"] {
+            color: #111;
+            border-bottom: 2px solid #4F6DF5;
+            padding-bottom: 4px;
+        }
+
+        .titles > .title:first-of-type {
+            margin-left: 1em;
+        }
+
+        .titles > .title:hover {
+            cursor: pointer;
+        }
+
+        .content {
+            position: relative;
+        }
+
+        .content > .item {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            display: none;
+        }
+        
+
+        .content > .item > form .form-group {
+            background-color: #FAFAFA;
+            padding: 1em;
+            border-radius: 8px;
+        }
+
+        .content > .item > form .form-group .form-fields {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .content > .item > form .form-group .form-fields .form-field {
+            display: flex;
+            flex-direction: column;
+            margin: 1em;
+        }
+
+        .content > .item > form .form-group .form-fields .form-field input {
+            height: 2.4em;
+            width: 20em;
+            padding: 0.2em;
+        }
+
+        .content > .item > form .form-group .form-fields .form-field input[type="number"] {
+            height: 2.4em;
+            width: 5em;
+            padding: 0.2em;
+        }
+
+        .wrapper {
+            margin: 1em 2em;
+        }
+
+        .titles > .btn {
+            padding: 0.3em 1.2em;
+            background-color: #4F6DF5;
+            color: #FFF;
+        }
+
+        .titles > .btn:hover {
+            opacity: 0.9;
+        }
+
+        .c-btn-group {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .c-btn {
+            padding: 0.3em 1.2em;
+            background-color: #4F6DF5;
+            color: #FFF;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2em;
+            margin-right: 1em; 
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="titles">
+            <div class="title">G M U</div>
+            <div class="title">G M S</div>
+            <div class="title">Major Mandatory</div>
+            <div class="title">B M U</div>
+            <div class="title">B M S</div>
+            <div class="title">B M P </div>
+            <div class="title">Research</div>
+            <div class="title">General Elective</div>
+            <div class="title">Major Elective</div>
+            <div class="title">Free Elective</div>
+            <div class="title" id="result-tab">Result</div>
+            <div class="title btn" onclick="next()">Audit</div>
+        </div>
+    
+        <div class="content">
+            <div class="item">
+                <h3 class="table-name">General Mandatory University Courses</h3>
+                <table class="table table-striped" >
+                    <thead class="table-info">
+                    <tr>
+                        <th><input type="checkbox" checked name="_selected_all_action" onclick="selector(0,0)" value="all" class="select-all" id="all-selector-0" style="margin-left:20%;"><strong>&nbsp;All</strong></th>
+                        <th ><strong>Course Code</strong></th>
+                        <th ><strong>Course Name</strong></th>
+                        <th ><strong>Credit Hour</strong></th>
+                        <th ><strong>Pre-Request</strong></th>
+                    </tr>
+                    </thead>
+                    {% for i in general_mandatory_university %}
+                            <tr class="submit_0" id="{{i.0}}" style="background:#e6ee9d;">
+                                <td class="check_box" >
+                                    <input type="checkbox" checked name="_selected_action_0" onclick="selector('{{i.0}}', 0)" value="{{i.0}}" class="action-select" id="checkbox-{{i.0}}" style="margin-left:20%;"></td>
+                                <td >{{i.0}}</td>
+                                <td >{{i.1}}</td>
+                                <td >{{i.2}}</td> 
+                                <td >{{i.3}}</td>
+                            </tr>
+                    {% endfor %}
+                </table>
+            </div> 
+            
+            <div class="item">
+                <h3 class="table-name">General Mandatory School Courses</h3>
+                <table class="table table-striped">
+                    <thead class="table-info">
+                    <tr>
+                        <th><input type="checkbox" checked name="_selected_all_action" onclick="selector(1,1)" value="all" class="select-all" id="all-selector-1" style="margin-left:20%;"><strong>&nbsp;All</strong></th>
+                        <th ><strong>Course Code</strong></th>
+                        <th ><strong>Course Name</strong></th>
+                        <th ><strong>Credit Hour</strong></th>
+                        <th ><strong>Pre-Request</strong></th>
+                    </tr>
+                    </thead>
+                    {% for i in general_mandatory_school %}
+                            <tr class="submit_1" id="{{i.0}}" style="background:#e6ee9d;">
+                                <td class="check_box">
+                                    <input type="checkbox" checked name="_selected_action_1" onclick="selector('{{i.0}}',1)" value="{{i.0}}" class="action-select" id="checkbox-{{i.0}}" style="margin-left:20%;"></td>
+                                <td >{{i.0}}</td>
+                                <td >{{i.1}}</td>
+                                <td >{{i.2}}</td> 
+                                <td >{{i.3}}</td>
+                            </tr>
+                    {% endfor %}
+                </table>
+            </div>
+    
+            <div class="item">
+                <h3 class="table-name">Major Mandatory Courses</h3>
+                <table class="table table-striped">
+                    <thead class="table-info">
+                    <tr>
+                        <th><input type="checkbox" checked name="_selected_all_action" onclick="selector(2,2)" value="all" class="select-all" id="all-selector-2" style="margin-left:20%;"><strong>&nbsp;All</strong></th>
+                        <th ><strong>Course Code</strong></th>
+                        <th ><strong>Course Name</strong></th>
+                        <th ><strong>Credit Hour</strong></th>
+                        <th ><strong>Pre-Request</strong></th>
+                    </tr>
+                    </thead>
+                    {% for i in major_mandatory %}
+                            <tr class="submit_2" id="{{i.0}}" style="background:#e6ee9d;">
+                                <td class="check_box">
+                                    <input type="checkbox" checked name="_selected_action_2" onclick="selector('{{i.0}}',2)" value="{{i.0}}" class="action-select" id="checkbox-{{i.0}}" style="margin-left:20%;"></td>
+                                <td >{{i.0}}</td>
+                                <td >{{i.1}}</td>
+                                <td >{{i.2}}</td> 
+                                <td >{{i.3}}</td>
+                            </tr>
+                    {% endfor %}
+                </table>
+            </div>
+    
+            <div class="item">
+                <h3 class="table-name">Basic Mandatory University Courses</h3>
+                <table class="table table-striped">
+                    <thead class="table-info">
+                    <tr>
+                        <th><input type="checkbox" checked name="_selected_all_action" onclick="selector(3,3)" value="all" class="select-all" id="all-selector-3" style="margin-left:20%;"><strong>&nbsp;All</strong></th>
+                        <th ><strong>Course Code</strong></th>
+                        <th ><strong>Course Name</strong></th>
+                        <th ><strong>Credit Hour</strong></th>
+                        <th ><strong>Pre-Request</strong></th>
+                    </tr>
+                    </thead>
+                    {% for i in basic_mandatory_university %}
+                            <tr class="submit_3" id="{{i.0}}" style="background:#e6ee9d;">
+                                <td class="check_box">
+                                    <input type="checkbox" checked name="_selected_action_3" onclick="selector('{{i.0}}',3)" value="{{i.0}}" class="action-select" id="checkbox-{{i.0}}" style="margin-left:20%;"></td>
+                                <td >{{i.0}}</td>
+                                <td >{{i.1}}</td>
+                                <td >{{i.2}}</td> 
+                                <td >{{i.3}}</td>
+                            </tr>
+                    {% endfor %}
+                </table>        
+            </div>
+    
+            <div class="item">
+                <h3 class="table-name">Basic Mandatory School Courses</h3>
+                <table class="table table-striped">
+                    <thead class="table-info">
+                    <tr>
+                        <th><input type="checkbox" checked name="_selected_all_action" onclick="selector(4,4)" value="all" class="select-all" id="all-selector-4" style="margin-left:20%;"><strong>&nbsp;All</strong></th>
+                        <th ><strong>Course Code</strong></th>
+                        <th ><strong>Course Name</strong></th>
+                        <th ><strong>Credit Hour</strong></th>
+                        <th ><strong>Pre-Request</strong></th>
+                    </tr>
+                    </thead>
+                    {% for i in basic_mandatory_school %}
+                            <tr class="submit_4" id="{{i.0}}" style="background:#e6ee9d;">
+                                <td class="check_box">
+                                    <input type="checkbox" checked name="_selected_action_4" onclick="selector('{{i.0}}',4)" value="{{i.0}}" class="action-select" id="checkbox-{{i.0}}" style="margin-left:20%;"></td>
+                                <td >{{i.0}}</td>
+                                <td >{{i.1}}</td>
+                                <td >{{i.2}}</td> 
+                                <td >{{i.3}}</td>
+                            </tr>
+                    {% endfor %}
+                </table>
+            </div>
+    
+            <div class="item">
+                <h3 class="table-name">
+                    Basic Mandatory Program Courses
+                </h3>
+                <table class="table table-striped">
+                    <thead class="table-info">
+                    <tr>
+                        <th><input type="checkbox" checked name="_selected_all_action" onclick="selector(5,5)" value="all" class="select-all" id="all-selector-5" style="margin-left:20%;"><strong>&nbsp;All</strong></th>
+                        <th ><strong>Course Code</strong></th>
+                        <th ><strong>Course Name</strong></th>
+                        <th ><strong>Credit Hour</strong></th>
+                        <th ><strong>Pre-Request</strong></th>
+                    </tr>
+                    </thead>
+                    {% for i in basic_mandatory_program %}
+                            <tr class="submit_5" id="{{i.0}}" style="background:#e6ee9d;">
+                                <td class="check_box">
+                                    <input type="checkbox" checked name="_selected_action_5" onclick="selector('{{i.0}}',5)" value="{{i.0}}" class="action-select" id="checkbox-{{i.0}}" style="margin-left:20%;"></td>
+                                <td >{{i.0}}</td>
+                                <td >{{i.1}}</td>
+                                <td >{{i.2}}</td> 
+                                <td >{{i.3}}</td>
+                            </tr>
+                    {% endfor %}
+                </table>
+            </div>
+    
+            <div class="item">
+                <h3 class="table-name">Research Courses</h3>
+                <table class="table table-striped">
+                    <thead class="table-info">
+                    <tr>
+                        <th><input type="checkbox" checked name="_selected_all_action" onclick="selector(6,6)" value="all" class="select-all" id="all-selector-6" style="margin-left:20%;"><strong>&nbsp;All</strong></th>
+                        <th ><strong>Course Code</strong></th>
+                        <th ><strong>Course Name</strong></th>
+                        <th ><strong>Credit Hour</strong></th>
+                        <th ><strong>Pre-Request</strong></th>
+                    </tr>
+                    </thead>
+                    {% for i in research %}
+                            <tr class="submit_6" id="{{i.0}}" style="background:#e6ee9d;">
+                                <td class="check_box">
+                                    <input type="checkbox" checked name="_selected_action_6" onclick="selector('{{i.0}}',6)" value="{{i.0}}" class="action-select" id="checkbox-{{i.0}}" style="margin-left:20%;"></td>
+                                <td >{{i.0}}</td>
+                                <td >{{i.1}}</td>
+                                <td >{{i.2}}</td> 
+                                <td >{{i.3}}</td>
+                            </tr>
+                    {% endfor %}
+                </table>
+            </div>
+    
+            <div class="item">
+                <h3 class="table-name">General Elective Courses</h3>
+                <table class="table table-striped">
+                    <thead class="table-info">
+                    <tr>
+                        <th><input type="checkbox" name="_selected_all_action" onclick="selector(7,7)" value="all" class="select-all" id="all-selector-7" style="margin-left:20%;"><strong>&nbsp;All</strong></th>
+                        <th ><strong>Course Code</strong></th>
+                        <th ><strong>Course Name</strong></th>
+                        <th ><strong>Credit Hour</strong></th>
+                        <th ><strong>Pre-Request</strong></th>
+                    </tr>
+                    </thead>
+                    {% for i in general_elective %}
+                            <tr class="submit_7" id="{{i.0}}">
+                                <td class="check_box">
+                                    <input type="checkbox" name="_selected_action_7" onclick="selector('{{i.0}}',7)" value="{{i.0}}" class="action-select" id="checkbox-{{i.0}}" style="margin-left:20%;"></td>
+                                <td >{{i.0}}</td>
+                                <td >{{i.1}}</td>
+                                <td >{{i.2}}</td> 
+                                <td >{{i.3}}</td>
+                            </tr>
+                    {% endfor %}
+                </table>
+            </div>
+    
+            <div class="item">
+                <h3 class="table-name">Major Elective Courses</h3>
+                <table class="table table-striped">
+                    <thead class="table-info">
+                    <tr>
+                        <th><input type="checkbox" name="_selected_all_action" onclick="selector(8,8)" value="all" class="select-all" id="all-selector-8" style="margin-left:20%;"><strong>&nbsp;All</strong></th>
+                        <th ><strong>Course Code</strong></th>
+                        <th ><strong>Course Name</strong></th>
+                        <th ><strong>Credit Hour</strong></th>
+                        <th ><strong>Pre-Request</strong></th>
+                    </tr>
+                    </thead>
+                    {% for i in major_elective %}
+                            <tr class="submit_8" id="{{i.0}}">
+                                <td class="check_box">
+                                    <input type="checkbox" name="_selected_action_8" onclick="selector('{{i.0}}',8)" value="{{i.0}}" class="action-select" id="checkbox-{{i.0}}" style="margin-left:20%;"></td>
+                                <td >{{i.0}}</td>
+                                <td >{{i.1}}</td>
+                                <td >{{i.2}}</td> 
+                                <td >{{i.3}}</td>
+                            </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+            <div class="item">
+
+                <form action="">
+                    <div class="form-group">
+                        <h3 for="">Free Elective <span class="elective-num">1</span></h3>
+                        <div class="form-fields">
+                            <div class="form-field">
+                                <label for="">Course Code</label>
+                                <input type="text" name="c-code">
+                            </div>
+        
+                            <div class="form-field">
+                                <label for="">Course Name</label>
+                                <input type="text" name="c-name">
+                            </div>
+        
+                            <div class="form-field">
+                                <label for="">Credit Hour</label>
+                                <input type="number" name="cr-hr">
+                            </div>
+        
+                            <div class="form-field">
+                                <label for="">Prequisite</label>
+                                <input type="text" name="pre">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+                <div class="c-btn-group">
+                    <button type="button" id="add-elective" class="c-btn">Add another</button>
+                    <button type="button" id="remove-elective" class="c-btn">Remove</button>
+                </div>
+            </div>
+            <div class="item" id="result">
+                This is where the result goes.
+            </div>
+        </div>
+            
+    </div>
+
+    <script>
+    function selector(submit_id, group){
+        var all_selector = document.getElementById("all-selector-" + group);
+        var all_lists = document.getElementsByName("_selected_action_" + group);
+        var all_rows = document.getElementsByClassName("submit_" + group);
+        
+        if (submit_id >= 0 && submit_id < 9){
+            // console.log(submit_id);
+            // console.log(all_selector.checked);
+            // console.log(all_lists);
+            // console.log(all_rows);
+            if (all_selector.checked){
+                for(var i=0;i<all_lists.length; i++){
+                    all_lists[i].checked = true;
+                }
+
+                for(var i=0;i<all_rows.length; i++){
+                    all_rows[i].style.backgroundColor = "#e6ee9d";
+                }
+            }
+            else{
+                for(var i=0; i < all_lists.length; i++){
+                    all_lists[i].checked = false;
+                }
+                for(var i=0;i<all_rows.length; i++){
+                    if (i%2 == 0)
+                        all_rows[i].style.backgroundColor = "#f2f2f2";
+                    else
+                        all_rows[i].style.backgroundColor = "#ffffff";
+                }
+            } 
+        }
+        else{
+            var all_rows = document.getElementsByClassName("submit_" + group);
+            var this_row = document.getElementById(submit_id);
+            var this_row_check_box = document.getElementById("checkbox-"+submit_id);
+            var checked = true;
+            for(var i=0; i < all_lists.length; i++){
+                if(all_lists[i].checked == false){
+                    checked = false;
+                    break;
+                }      
+            }
+            if(checked) all_selector.checked = true;
+            else all_selector.checked = false;
+
+            if(this_row_check_box.checked){
+                this_row.style.backgroundColor = "#e6ee9d";
+            }
+            else{
+                for(var i=0;i<all_rows.length; i++){
+                    if(all_rows[i] == this_row){
+                        if (i%2 == 0)
+                            this_row.style.backgroundColor = "#f2f2f2";
+                        else
+                            this_row.style.backgroundColor = "#ffffff";
+                        break;
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    function next(){
+        var ite, i, all_rows, submit_id, this_row_check_box, this_row_result;
+              
+        var k = 0;
+        var submit_array = new Array();
+        for(ite = 0; ite < 9; ite++){
+            all_rows = document.getElementsByClassName("submit_" + ite);  
+            // console.log(all_rows);
+            for (i = 0; i < all_rows.length; i++){
+                submit_id = all_rows[i].id;
+                this_row_check_box = document.getElementById("checkbox-"+submit_id);
+                if(this_row_check_box.checked){
+                    submit_array[k] = submit_id;
+                    k += 1;
+                }   
+            }
+        }
+
+        var form = document.querySelector('.content .item form');
+        var form_group = form.querySelectorAll('.form-group');
+
+        var final_arr = new Array();
+
+        for(let i=0; i<form_group.length; i++) {
+            var tmp = new Array();
+            var inputs = form_group[i].querySelectorAll('input');
+            inputs.forEach(el => {
+                tmp.push(el.value);
+            });
+
+            final_arr.push(tmp);
+        }
+
+        
+        reJudge(submit_array, final_arr);
+
+        var titles = document.querySelectorAll('.title');
+        var items = document.querySelectorAll('.item');
+
+        var result_tab = document.querySelector('#result-tab');
+        var result_item = document.querySelector('#result');
+        result_item.style.display = 'block';
+        result_tab.setAttribute('data-status', 'active');
+        
+        for(let j=0; j<titles.length-1; j++) {
+            if(titles[j] != result_tab) {
+                items[j].style.display = 'none';
+                titles[j].removeAttribute('data-status');
+            }
+        }
+
+    }
+
+    function reJudge(total_submit, final_arr){
+        
+        $.ajax({ 
+            url:"{% url 'ajax_audit' %}",
+            data:{
+                'total_submit[]': total_submit,
+                'final_arr[]': final_arr,
+            },
+            success: function(data){
+                console.log(data);
+                $('#result').html(data);
+
+            }
+        }); 
+    }
+
+</script>
+
+<script>
+    var titles = document.querySelectorAll('.title');
+    var items = document.querySelectorAll('.item');
+
+    items[0].style.display = 'block';
+    titles[0].setAttribute('data-status', 'active');
+    
+    for(let i=0; i<titles.length-1; i++) {
+        let status = true;
+
+        
+        titles[i].addEventListener('click', function(event) {
+            if(status) {
+                items[i].style.display = 'block';
+                titles[i].setAttribute('data-status', 'active');
+                
+                for(let j=0; j<titles.length-1; j++) {
+                    if(titles[j] != event.target) {
+                        items[j].style.display = 'none';
+                        titles[j].removeAttribute('data-status');
+                    }
+                }
+
+                status = true;
+            }
+        });
+    }
+
+    var form = document.querySelector('.content .item form');
+    var form_group = form.querySelector('.form-group');
+    var template = form_group.cloneNode(true);;
+
+    var add_elective = document.querySelector('#add-elective');
+    
+    var i = 2;
+
+    add_elective.addEventListener('click', function() {
+        if(i >= 4) {
+            alert("You can't have more than 3 free electives.");
+            return;
+        }
+        var tmp = template.cloneNode(true);
+        tmp.querySelector('.elective-num').innerHTML = i.toString();
+        i++;
+        form.appendChild(tmp);
+        
+    });
+
+    var remove_elective = document.querySelector('#remove-elective');
+
+
+    remove_elective.addEventListener('click', function() {
+        var arr = document.querySelectorAll('.form-group');
+        i--;
+        var l = arr.length-1;
+        form.removeChild(arr[l]);
+
+    });
+
+</script>
+</body>
+</html>

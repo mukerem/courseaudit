@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Course Audit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+
+        body {
+            padding: 2em;
+        }
+
+        .wrapper {
+            width: 50%;
+            height: 90vh;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F7F7F7;
+            border-radius: 8px;
+        }
+
+        .wrapper h1 {
+            font-size: 2em;
+            font-weight: 300;
+            color: #111;
+        }
+        .wrapper > h1 {
+            font-size: 3em;
+        }
+
+        .desc, 
+        .note {
+            margin: 1em 2em;
+            color: #444;
+        }
+
+        .note > ul {
+            margin: 1em 2em;
+        }
+
+        .desc p {
+            margin: 1em;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 0.8em 1.2em;
+            background-color: #4F6DF5;
+            color: #FFF;
+            border-radius: 2px;
+            float: right;
+            margin-top: 2em;
+            opacity: 0.9;
+        }
+        
+        .btn:hover {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Course Audit</h1>
+        <div class="desc">
+            <p>
+                This website lets you audit the courses you have taken and 
+                tell you the courses that you have not taken and those that you
+                have. Also it will let you know the credit hours you have taken
+                as well as those that you haven't.
+            </p>
+            <p>
+                This website is only for 5th year(2020) CSE students .
+            </p>
+        </div>
+
+        <div class="note">
+            <h1>Notes</h1>
+            <ul>
+                <li>
+                    Choose the courses you have taken.
+                </li>
+                <li>
+                    If you choose free elective/s from CSE department choose it from
+                    the major electives tab.
+                </li>
+                <li>
+                    If you have any free elective/s you have taken from other departments 
+                    you must fill the form in the free elective tab.
+                </li>
+            </ul>
+        </div>
+        <a href="{% url 'course' %}" class="btn">Next</a>    
+    </div>
+</body>
+</html>

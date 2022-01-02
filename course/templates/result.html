@@ -1,0 +1,67 @@
+<style>
+    .lead-par {
+        font-size: 1.4em;
+        font-weight: lighter;
+    }
+
+
+
+</style>
+<div>
+<p class="lead-par">total credit hours: {{total_credit}}</p>
+    {% if not_taken.ok == "yes" %}
+        <p class="lead-par">Status: Ok</p>    
+    {% else %}
+        {% if not_taken.mandatory %}
+        <h3 class="table-name">Not taken Mandatory Courses</h3>
+        <table class="table table-striped">
+            <thead class="table-info">
+            <tr>
+                <th ><strong>Course Code</strong></th>
+                <th ><strong>Course Name</strong></th>
+                <th ><strong>Credit Hour</strong></th>
+                <th ><strong>Pre-Request</strong></th>
+            </tr>
+            </thead>
+            {% for i in not_taken.mandatory %}
+                    <tr class="submit_8" id="{{i.0}}">
+                        <td >{{i.0}}</td>
+                        <td >{{i.1}}</td>
+                        <td >{{i.2}}</td> 
+                        <td >{{i.3}}</td>
+                    </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+        {% if not_taken.major_elective %}
+        <br><br>
+        <h3 class="table-name">Major Elective Courses not taken</h3>
+        <table class="table table-striped">
+            <thead class="table-info">
+            <tr>
+                <th ><strong>Semester</strong></th>
+                <th ><strong>Courses not taken</strong></th>
+                
+            </tr>
+            </thead>
+            {% for i in not_taken.major_elective %}
+                    <tr class="submit_10" id="{{i.0}}">
+                        <td >{{i.0}}</td>
+                        <td >{{i.1}}</td>
+                        
+                    </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+        {% if not_taken.general_elective%}
+        <p class="lead-par">Course/s from general elective that you have not taken: {{not_taken.general_elective}}</p>
+        {% endif %}
+
+        {% if not_taken.free_elective%}
+        <p class="lead-par">Course/s from free elective that you have not taken: {{not_taken.free_elective}}</p>
+        {% endif %}
+    {% endif %}
+
+</div>

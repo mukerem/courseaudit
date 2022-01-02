@@ -1,0 +1,88 @@
+ENG1011 Communicative English Skills 3(3-0-0) None
+ENG1022 Basic Writing Skills 3(3-0-0) ENG1011
+LAR1011 Introduction to Civics and Ethics 3(3-0-0) None
+LAR1012 Logic and Critical thinking 3(3-0-0) None
+HPEd1011 Health and Physical Education I 0 None
+HPEd1022 Health and Physical Education II 0 None
+
+SOS311 Principles of Economics 3(3-0-0) None
+SOS412 Entrepreneurship for Engineers 2(2-0-0) None
+CSE4221 Engineering Research and Development Methodology 2(2-0-0) None
+
+LAR3032 Industrial and Organizational Psychology 3(3-0-0) None
+LAR4022 Cognitive Psychology 3(3-0-0) None
+LAR3042 Introduction to LAW 3(3-0-0) None
+ENG2031 Technical Report Writing for Science and Technology 2(2-0-0) None
+SOS362 Organizational Behavior 2(2-0-0) None
+SOS372 Leadership and Change 2(2-0-0) None
+SOS313 Introduction to Management 2(2-0-0) None
+
+Math1101 Applied Mathematics I 4(3-3-0) None
+Phys1101 General Physics I 3(2-3-0) None
+Chem1101 General Chemistry 3(3-0-0) None
+CSE1101 Introduction to Computing 3(2-0-3) None
+Math1102 Applied Mathematics II 4(3-3-0) Math1101
+DME1102 Engineering Drawing 3(2-0-3) None
+Phys1102 General Physics II 3(2-0-3) Phys1101
+CSE1102 Fundamentals of Programming 3(2-0-3) CSE1101
+
+Math2101 Applied Mathematics III 4(3-3-0) Math1102
+PCE2101 Fundamentals of Electrical Engineering 4(2-3-3) Math1101
+ECE2101 Electronic Circuit I 4(2-3-3) PCE2101
+CSE2101 Data Structures and Algorithms 3(2-0-3) CSE1102
+ISE2101 Fundamentals of Information 3(3-0-0) None
+
+CSE2206 Discrete Mathematics for Computer Science 3(3-0-0) Math1101
+ECE3103 Probability and Random Process 3(2-3-0) Math2101
+
+CSE2202 Object Oriented Programming 3(2-0-3) None
+CSE2222 Data Structures and Algorithm 3(2-0-3) CSE1102
+CSE3211 Algorithms 3(3-0-0) CSE2222 or CSE2101
+ECE3204 Digital Logic Design 3(2-0-3) ECE2201
+CSE3203 Computer Architecture & Organization 3(2-0-3) ECE3204
+CSE3204 Operating Systems 4(3-0-3) CSE3203
+CSE3206 Introduction to Artificial Intelligence 3(2-0-3) None
+CSE3213 Fundamentals of Software Engineering 3(3-0-0) None
+CSE3207 Database Systems 3(2-0-3) None
+CSE3221 Data Communication and computer Networks 3(2-1-2) None
+CSE4202 Programming Languages 3(3-0-0) None
+CSE4201 Formal Language & Automata Theory 3(3-0-0) None
+
+CSE5213 Seminar 1(0-0-3) None
+CSE5211 Semester Project 2(0-0-6) Senior standing courses
+CSE5221 B.Sc. Project 4(0-0-12) Senior standing courses
+
+ECE2204 Signals and Systems 3(2-3-0) Math2101
+CSE2320 System Programming 3(2-0-3) None
+ECE2202 Electronic Circuit II 4(2-3-3) ECE2201
+ECE3205 Digital Signal Processing 3(2-0-3) ECE2204
+CSE3306 Web Programming 3(2-0-3) None
+CSE3310 Computer Graphics 3(2-0-3) None
+CSE3312 Advanced Programming 3(2-0-3) CSE2202
+CSE3308 Software Requirement Engineering 3(3-0-0) CSE3213
+PCE3201 Electrical Network Analysis and synthesis 3(2-3-0) ECE2206
+PCE3204 Introduction to Control Systems 3(2-1-2) PCE3201
+CSE4303 Multimedia Technologies 3(2-0-3) None
+CSE4307 Network and information security 3(2-0-3) None
+CSE4311 Mobile Computing and Applications 3(2-0-3) CSE2202
+CSE4312 Introduction to Computer Vision 3(2-0-3) None
+CSE4304 Information Storage and Retrieval 3(2-0-3) None
+CSE4309 Software Design and Architecture 3(3-0-0) CSE3213
+CSE4310 Compiler Design 3(2-0-3) CSE4201
+CSE4302 Project Management 3(3-0-0) None
+ECE5303 VLSI Design 3(2-0-3) CSE3203
+CSE5307 Distributed Systems 3(2-0-3) CSE2202
+CSE5309 Wireless Mobile Networks 3(2-0-3) CSE3221
+CSE5311 Image Processing 3(2-0-3) ECE3205
+CSE5313 Human Computer Interaction 3(2-0-3) None
+CSE5315 Introduction to Audio & Video Production 3(2-0-3) None
+CSE3314 Microcomputer & interfacing 3(2-0-3) CSE3203
+CSE5304 Computer Games & Animation 3(2-0-3) None
+CSE5317 Introduction to Data mining 3(2-0-3) CSE3207
+CSE5321 Introduction to NLP 3(2-0-3) None
+CSE5306 Special Topics in Computer Science and Engineering 3(3-0-0) None
+CSE5308 Real time and Embedded Systems 3(2-0-3) ECE4202
+CSE5310 Software Quality & Testing 3(3-0-0) CSE3213
+CSE5312 Computer Ethic & Social Issues 3(2-0-3) None
+CSE5319 Advanced Network 3(3-0-0) CSE3221
+PCE5308 Introduction to Robotics and Industrial Automation 3(2-0-3) PCE3204
