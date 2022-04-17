@@ -62,6 +62,10 @@
         {% if not_taken.free_elective%}
         <p class="lead-par">Course/s from free elective that you have not taken: {{not_taken.free_elective}}</p>
         {% endif %}
+
+        {% if not_taken.other_error%}
+        <p class="lead-par">{{not_taken.other_error}}</p>
+        {% endif %}
     {% endif %}
 
 </div>

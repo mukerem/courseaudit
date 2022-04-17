@@ -21,8 +21,8 @@ general_elective = [
     ("SOS362", "Organizational Behavior", 2, "None"),
     ("SOS372", "Leadership and Change", 2, "None"),
     ("SOS313", "Introduction to Management", 2, "None"),
-    ("LAR3032", "Industrial and Organizational Psychology", 3, "None"),
-    ("LAR4022", "Cognitive Psychology", 3, "None"),
+    ("LAR3032", "Industrial and Organizational Psychology", 2, "None"),
+    ("LAR4022", "Cognitive Psychology", 2, "None"),
     ("LAR3042", "Introduction to LAW", 3, "None"),
 ]
 
@@ -41,8 +41,8 @@ basic_mandatory_school = [
     ("Math2101", "Applied Mathematics III", 4, "Math1102"),
     ("PCE2101", "Fundamentals of Electrical Engineering", 4, "Math1101"),
     ("ECE2101", "Electronic Circuit I", 4, "PCE2101"),
-    ("CSE2101", "Data Structures and Algorithms", 3, "CSE1102"),
-    ("ISE2101", "Fundamentals of Information", 3, "None"),
+    ("CSE2112", "Data Structures and Algorithms", 3, "CSE1102"),
+    # ("ISE2101", "Fundamentals of Information", 3, "None"),
 ]
 
 basic_mandatory_program = [
@@ -52,17 +52,18 @@ basic_mandatory_program = [
 
 major_mandatory = [
     ("CSE2202", "Object Oriented Programming", 3, "None"),
-    ("CSE2222", "Data Structures and Algorithm", 3, "CSE1102"),
+    # ("CSE2222", "Data Structures and Algorithm", 3, "CSE1102"),
     ("CSE3211", "Algorithms", 3, "CSE2222 or CSE2101"),
     ("ECE3204", "Digital Logic Design", 3, "ECE2201"),
     ("CSE3203", "Computer Architecture & Organization", 3, "ECE3204"),
     ("CSE3204", "Operating Systems", 4, "CSE3203"),
     ("CSE3206", "Introduction to Artificial Intelligence", 3, "None"),
     ("CSE3213", "Fundamentals of Software Engineering", 3, "None"),
-    ("CSE3207", "Database Systems", 3, "None"),
-    ("CSE3221", "Data Communication and computer Networks", 3, "None"),
+    ("CSE3207", "Database Systems", 4, "None"),
+    ("CSE3221", "Data Communication and computer Networks", 4, "None"),
     ("CSE4202", "Programming Languages", 3, "None"),
     ("CSE4201", "Formal Language & Automata Theory", 3, "None"),
+    ("CSE4302", "Project Management", 3, "None"),
 ]
 
 research = [
@@ -74,43 +75,50 @@ research = [
 major_elective = [
     ("ECE2202", "Electronic Circuit II", 4, "ECE2201"),
     ("CSE2320", "System Programming", 3, "None"),
+    ("CSE3310", "Computer Graphics", 3, "None"), #2
 
     ("CSE3306", "Web Programming", 3, "None"),
-    ("CSE3310", "Computer Graphics", 3, "None"),
+    # ("CSE3310", "Computer Graphics", 3, "None"),
     ("CSE3312", "Advanced Programming", 3, "CSE2202"),
-    ("CSE3308", "Software Requirement Engineering", 3, "CSE3213"),
+    ("CSE3308", "Software Requirement Engineering (3rd year)", 3, "CSE3213"),
     ("CSE4304", "Information Storage and Retrieval", 3, "None"),
-    ("CSE3314", "Microcomputer & interfacing", 3, "CSE3203"),
+    ("CSE3314", "Microcomputer & interfacing", 3, "CSE3203"), #7
 
     ("ECE2204", "Signals and Systems", 3, "Math2101"),
     ("CSE4303", "Multimedia Technologies", 3, "None"),
-    ("CSE4307", "Network and information security", 3, "None"),
+    # ("CSE4307", "Network and information security", 3, "None"),
     ("CSE4311", "Mobile Computing and Applications", 3, "CSE2202"),
     ("CSE5317", "Introduction to Data mining", 3, "CSE3207"),
     ("CSE5321", "Introduction to NLP", 3, "None"),
-    ("CSE4309", "Software Design and Architecture", 3, "CSE3213"),
+    ("CSE4309", "Software Design and Architecture", 3, "CSE3213"), #8-13
 
     ("ECE3205", "Digital Signal Processing", 3, "ECE2204"),
     ("PCE3201", "Electrical Network Analysis and synthesis", 3, "ECE2206"),
-    ("CSE4312", "Introduction to Computer Vision", 3, "None"),
+    # ("CSE4312", "Introduction to Computer Vision", 3, "None"),
     ("CSE4310", "Compiler Design", 3, "CSE4201"),
-    ("CSE4302", "Project Management", 3, "None"),
+    # ("CSE4302", "Project Management", 3, "None"),
+    ("CSE5306", "Special Topics in Computer Science and Engineering", 3, None),
     ("ECE5303", "VLSI Design", 3, "CSE3203"),
+    ("CSE5311", "Image Processing", 3, "ECE3205"), #14-19
 
     ("CSE5307", "Distributed Systems", 3, "CSE2202"),
     ("CSE5309", "Wireless Mobile Networks", 3, "CSE3221"),
-    ("CSE5311", "Image Processing", 3, "ECE3205"),
+    ("CSE4312", "Introduction to Computer Vision", 3, "None"),
+    # ("CSE5311", "Image Processing", 3, "ECE3205"),
     ("CSE5313", "Human Computer Interaction", 3, "None"),
     ("CSE5315", "Introduction to Audio & Video Production", 3, "None"),
     ("CSE5319", "Advanced Network", 3, "CSE3221"),
-    ("PCE3204", "Introduction to Control Systems", 3, "PCE3201"),
+    ("PCE3204", "Introduction to Control Systems", 3, "PCE3201"), #20-25
 
     ("CSE5312", "Computer Ethic & Social Issues", 3, "None"),
     ("CSE5304", "Computer Games & Animation", 3, "None"),
-    ("CSE5306", "Special Topics in Computer Science and Engineering", 3, "None"),
+    # ("CSE5306", "Special Topics in Computer Science and Engineering", 3, "None"),
     ("CSE5308", "Real time and Embedded Systems", 3, "ECE4202"),
     ("CSE5310", "Software Quality & Testing", 3, "CSE3213"),
     ("PCE5308", "Introduction to Robotics and Industrial Automation", 3, "PCE3204"),
+    # 26-30
+    ("CSE3308", "Software Requirement Engineering (5th year)", 3, "CSE3213"),
+
 ]
 
 mandatory = {
@@ -139,9 +147,9 @@ for i in all_course_group:
     for j in all_course_group[i]:
         all_course_code.append(j[0])
 
-elective = [(0, 2, 1, "2nd year 2nd semister"), (2, 8, 1, "3rd year 2nd semister"), 
-            (8, 15, 4, "4th year 1st semister"), (15, 21, 3, "4th year 2nd semister"),
-            (21, 28, 3, "5th year 1st semister"), (28, 34, 2, "5th year 2nd semister")]
+elective = [(0, 3, 1, "2nd year 2nd semister"), (3, 8, 2, "3rd year 2nd semister"), 
+            (8, 14, 3, "4th year 1st semister"), (14, 20, 3, "4th year 2nd semister"),
+            (20, 26, 3, "5th year 1st semister"), (26, 33, 3, "5th year 2nd semister")]
 
 all_course_dict = {}
 for i in all_course_group:
@@ -166,15 +174,14 @@ def ajax_audit(request):
         x = i.split(',')
         free_elective.append((x[0], x[1], int(x[2]), x[3]))
     courses = [i for i in total]
+    not_taken = dict()
     total_credit = 0
     for cou in courses:
         total_credit += all_course_dict[cou][1]
-
     for cou in free_elective:
         total_credit += cou[2]
 
     reserve = []
-    not_taken = dict()
     man_not_taken = []
     for i in mandatory:
         for j in mandatory[i]:
@@ -220,7 +227,12 @@ def ajax_audit(request):
         else:
             not_taken["free_elective"] = free_count
     
-    if not_taken["mandatory"] or not_taken["general_elective"] or not_taken["major_elective"] or not_taken["free_elective"]   :
+    if courses.count('CSE3308') >= 2:
+        not_taken["other_error"] = "CSE3308 is duplicate in 2 semisters. It is not valid."
+    else:
+        not_taken["other_error"] = None
+        
+    if not_taken["mandatory"] or not_taken["general_elective"] or not_taken["major_elective"] or not_taken["free_elective"] or not_taken["other_error"]   :
         not_taken["ok"] = "No"
     else:
         not_taken["ok"] = "yes"
