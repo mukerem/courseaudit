@@ -33,6 +33,8 @@ Course Audit is an online automated program for calculating the total credit hou
 * sqlite - for database.
 
 ### Steps to follow
+* Home Page
+![image](https://user-images.githubusercontent.com/51055556/163710374-acedfa40-7bfd-4d45-89b8-e2b7d8aa665c.png)
 * User must choose department elective courses, free elective courses and after all hit the "Audit" button.
 ![image](https://user-images.githubusercontent.com/51055556/163693181-3cb90869-9592-456e-a605-dc8f99d3dbaa.png)
 ![image](https://user-images.githubusercontent.com/51055556/163693208-8a3785ea-a2ca-43c5-a35e-72bdf95ff3f7.png)
