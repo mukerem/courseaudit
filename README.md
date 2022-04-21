@@ -50,6 +50,6 @@ Course Audit is an online automated program for calculating the total credit hou
 
 ### Contributors
 > Mukerem Ali - Backend Developer \
-> Abdi Adem - Frontend Developer \
+> Abdi Adem - Frontend Developer
 
 If you liked the project give it a 🌟. 
