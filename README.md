@@ -7,7 +7,7 @@ Course Audit is an online automated program for calculating the total credit hou
 
 🌴 The initiative is taken in 2020, sometimes students forgot to check if they can graduate or not, due to ADD and DROP of courses, so might be difficult to remember. One best feature of this system is that it tells in which semester we missed a course.
 
-🥅 The main aim of this project is to help ASTU CSE 2022 department students to let them know the total credit hours they took till now. I have been responsible for creating the main backend of the system. Since the system is used by many users at the department repeatedly, I used the Django backend to serve data of courses.
+🥅 The main aim of this project is to help ASTU CSE 2020 department students to let them know the total credit hours they took till now. I have been responsible for creating the main backend of the system. Since the system is used by many users at the department repeatedly, I used the Django backend to serve data of courses.
 
 👨‍💻 The main technologies used are JS - AJAX for dynamic rendering of course audit, Django for the backend, and the front-end is made using HTML, CSS, and JS and also using Bootstrap.
 
